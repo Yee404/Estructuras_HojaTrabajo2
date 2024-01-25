@@ -1,6 +1,14 @@
 import java.util.Vector; 
 
 public class IStackvector<T> implements IStack<T> {
+   
+    private int index;
+    Vector<T> internalVector;
+
+    public IStackvector(int qty){
+        index = 0;
+        internalVector = new Vector<T>(qty);
+    }
 
     @Override
     public int count() {
