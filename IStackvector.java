@@ -13,7 +13,7 @@ public class IStackvector<T> implements IStack<T> {
     @Override
     public int count() {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'count'");
+        return internalVector.size();
     }
 
     @Override
