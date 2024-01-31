@@ -8,6 +8,6 @@ public interface ICalculator {
     public int division(int n1, int n2) throws Exception; // /
     public int residue(int n1, int n2) throws Exception; // %
     public Vector<String> read(String charactersString) throws Exception;
-    public int solve(Vector<Character> elements) throws Exception;
+    public int solve(Vector<String> elements) throws Exception;
 
 }
