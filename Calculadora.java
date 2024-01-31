@@ -89,4 +89,10 @@ public class Calculadora implements ICalculator {
             return false;
         }
     }
+
+    public int add(Vector<Integer> vector) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'add'");
+    }
 }
+
