@@ -84,12 +84,14 @@ public class Menu {
         }
     }
 
-    public void ejecutarMenu() {
+    public void ejecutarMenu() throws Exception {
         while (true) {
             System.out.println("\n---- Menú ----");
             System.out.println("1. Cargar datos desde archivo");
             System.out.println("2. Mostrar datos");
-            System.out.println("3. Salir");
+            System.out.println("3. Mostrar operaciones");
+            Calculadora calcu1 = new Calculadora();
+            System.out.println("4. Salir");
 
             System.out.print("Selecciona una opción: ");
             String opcion = System.console().readLine();
@@ -101,11 +103,17 @@ public class Menu {
                     cargarDatos(archivo);
                     break;
                 case "2":
-                    mostrarDatos();
+                            mostrarDatos();
                     break;
+
                 case "3":
+                    calcu1.solve(null);
+                    break;
+
+                case "4":
                     System.out.println("Saliendo del programa. ¡Hasta luego!");
                     return;
+                    
                 default:
                     System.out.println("Opción no válida. Por favor, ingresa una opción válida.");
                     break;
@@ -113,7 +121,7 @@ public class Menu {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Menu menu = new Menu();
         menu.ejecutarMenu();
     }
