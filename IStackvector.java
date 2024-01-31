@@ -12,25 +12,21 @@ public class IStackvector<T> implements IStack<T> {
 
     @Override
     public int count() {
-        // TODO Auto-generated method stub
         return internalVector.size();
     }
 
     @Override
     public boolean isEmpty() {
-        // TODO Auto-generated method stub
     return internalVector.isEmpty();
     }
 
     @Override
     public void push(T value) {
-        // TODO Auto-generated method stub
          internalVector.add(value);
     }
 
     @Override
     public T pop() {
-        // TODO Auto-generated method stub
         T tempValue = null;
         if (internalVector.size() > 0){
             tempValue = internalVector.remove(internalVector.size() - 1);
@@ -40,7 +36,6 @@ public class IStackvector<T> implements IStack<T> {
 
     @Override
     public T peek() {
-        // TODO Auto-generated method stub
         T tempValue = null;
         if (internalVector.size() > 0){
             tempValue = internalVector.get(internalVector.size() - 1);
@@ -50,8 +45,9 @@ public class IStackvector<T> implements IStack<T> {
 
     @Override
     public int size() {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'size'");
     }
     
 }
+
+
