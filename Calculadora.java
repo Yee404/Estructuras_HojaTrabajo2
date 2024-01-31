@@ -4,41 +4,44 @@ public class Calculadora implements ICalculator {
 
     IStack<Integer> stackInterno = new IStackvector<Integer>(20);
     
+    //Método para sumar los números
     @Override
     public int add(int n1, int n2) {
         return n1 + n2;
     }
-
+    //Método para restar los números
     @Override
     public int substraction(int n1, int n2) {
        return n1 - n2;
         
-        
     }
 
-    // Abner 
+    //Método para multiplicar los números
     @Override
     public int multiplication(int n1, int n2) {
         return n1 * n2;
     }
 
-    // abner 
+    //Método para dividir los números
     @Override
     public int division(int n1, int n2) throws Exception {
         return n1 / n2;
     }
 
+    //Método para obtener el residuo de los números
     @Override
     public int residue(int n1, int n2) throws Exception {
         return n1 % n2;
     }
 
+    //Método para leer el archivo de texto que contiene los datos
     @Override
     public Vector<String> read(String charactersString) throws Exception {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'read'");
     }
 
+    //Método para verificar si son operandos u operadores
     @Override
     public int solve(Vector<String> elements) throws Exception {
         
