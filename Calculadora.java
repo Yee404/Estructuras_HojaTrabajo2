@@ -5,10 +5,45 @@ public class Calculadora implements ICalculator {
     IStack<Integer> stackInterno = new IStackvector<Integer>(20);
     
     @Override
-    public int add(String cadena) {
+    public int add(int n1, int n2) {
+        return n1 + n2;
+    }
 
-        for (int i = 0; i < cadena.length(); i++) {
-            char c = cadena.charAt(i);
+    @Override
+    public int substraction(int n1, int n2) {
+       return n1 - n2;
+        
+        
+    }
+
+    // Abner 
+    @Override
+    public int multiplication(int n1, int n2) {
+        return n1 * n2;
+    }
+
+    // abner 
+    @Override
+    public int division(int n1, int n2) throws Exception {
+        return n1 / n2;
+    }
+
+    @Override
+    public int residue(int n1, int n2) throws Exception {
+        return n1 % n2;
+    }
+
+    @Override
+    public Vector<String> read(String charactersString) throws Exception {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'read'");
+    }
+
+    @Override
+    public int solve(Vector<String> elements) throws Exception {
+        
+        for (int i = 0; i < elements.size(); i++) {
+            char c = ((CharSequence) elements).charAt(i);
 
             if (Character.isDigit(c)) {
                 stackInterno.push(c - '0');
@@ -28,50 +63,7 @@ public class Calculadora implements ICalculator {
             }
             return stackInterno.pop();
         }
-        return 0;
-
-    }
-
-    @Override
-    public int substraction(int n1, int n2) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'multiplication'");
-    
-       // result = n1 - n2;
-        //return result;
-        
-    }
-
-    // Abner 
-    @Override
-    public int multiplication(int n1, int n2) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'multiplication'");
-    }
-
-    // abner 
-    @Override
-    public int division(int n1, int n2) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'division'");
-    }
-
-    @Override
-    public int residue(int n1, int n2) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'residue'");
-    }
-
-    @Override
-    public Vector<String> read(String charactersString) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'read'");
-    }
-
-    @Override
-    public int solve(Vector<Character> elements) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'solve'");
+        return stackInterno.pop();
     }
     
 }
