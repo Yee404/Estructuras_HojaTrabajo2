@@ -85,11 +85,20 @@ public class Menu {
     }
 
     public void ejecutarMenu() {
+        ICalculator miCalculador = new Calculadora();
         while (true) {
             System.out.println("\n---- Menú ----");
             System.out.println("1. Cargar datos desde archivo");
             System.out.println("2. Mostrar datos");
             System.out.println("3. Salir");
+            System.out.println("4. imprimir la suma");
+            try{
+                int resultado = miCalculador.solve(miCalculador.read("2 3 + 5 *"));
+                
+            }catch(Exception e){
+                System.out.println("Se encontro un error " + e.getMessage());
+            }
+            
 
             System.out.print("Selecciona una opción: ");
             String opcion = System.console().readLine();
@@ -106,6 +115,8 @@ public class Menu {
                 case "3":
                     System.out.println("Saliendo del programa. ¡Hasta luego!");
                     return;
+                
+                
                 default:
                     System.out.println("Opción no válida. Por favor, ingresa una opción válida.");
                     break;

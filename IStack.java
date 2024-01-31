@@ -15,4 +15,6 @@ public interface IStack<T>{
 
     T peek();
 
+    int size();
+
 }

@@ -47,5 +47,11 @@ public class IStackvector<T> implements IStack<T> {
         }
         return tempValue;
     }
+
+    @Override
+    public int size() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'size'");
+    }
     
 }
