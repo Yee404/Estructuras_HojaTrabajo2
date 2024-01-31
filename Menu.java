@@ -55,6 +55,7 @@ public class Menu {
      *
      */
     private String DATOS;
+    private String archivo;
 
     public Menu() {
         this.DATOS = null;
@@ -91,39 +92,42 @@ public class Menu {
             System.out.println("1. Cargar datos desde archivo");
             System.out.println("2. Mostrar datos");
             System.out.println("3. Salir");
-            System.out.println("4. imprimir la suma");
-            try{
-                int resultado = miCalculador.solve(miCalculador.read("2 3 + 5 *"));
-                
-            }catch(Exception e){
-                System.out.println("Se encontro un error " + e.getMessage());
-            }
-            
-
+            System.out.println("4. Imprimir la suma");
+            System.out.println("5. Imprimir los resultados");
+    
             System.out.print("Selecciona una opción: ");
             String opcion = System.console().readLine();
-
+    
             switch (opcion) {
                 case "1":
-                    System.out.print("Ingrese el nombre del archivo (por ejemplo, 'datos.txt'): ");
-                    String archivo = System.console().readLine();
-                    cargarDatos(archivo);
-                    break;
+                System.out.print("Ingrese el nombre del archivo (por ejemplo, 'datos.txt'): ");
+                String archivo = System.console().readLine();
+                cargarDatos(archivo);
+                break;
+                
                 case "2":
                     mostrarDatos();
                     break;
                 case "3":
                     System.out.println("Saliendo del programa. ¡Hasta luego!");
                     return;
-                
-                
+                case "4":
+                    try{
+                        int resultado = miCalculador.solve(miCalculador.read("2 3 +  "));
+                        System.out.println("El resultado de la suma es: " + resultado);
+                    }catch(Exception e){
+                        System.out.println("Se encontro un error " + e.getMessage());
+                    }
+                    break;
+                case "5":
+                    // Código para imprimir los resultados
+                    break;
                 default:
                     System.out.println("Opción no válida. Por favor, ingresa una opción válida.");
                     break;
             }
         }
     }
-
     public static void main(String[] args) {
         Menu menu = new Menu();
         menu.ejecutarMenu();
